@@ -9,8 +9,9 @@ const Home: NextPage = () => {
         <title>Spotify Utilization</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <main>
-        {/*sidebar */}
+        <Sidebar />
         {/*Center */}
       </main>
 
