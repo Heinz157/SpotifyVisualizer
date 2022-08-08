@@ -6,7 +6,7 @@ import {
     HeartIcon,
     RssIcon
 } from "@heroicons/react/outline";
-import { signOut } from "next-auth/client";
+import { signOut } from "next-auth/react";
 
 function Sidebar() {
     return (
