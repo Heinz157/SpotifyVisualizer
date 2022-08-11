@@ -10,8 +10,6 @@ import { signOut, useSession } from "next-auth/react";
 
 function Sidebar() {
     const { data: session, status } = useSession();
-
-    console.log(session);
     
     
     return (
