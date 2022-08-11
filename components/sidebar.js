@@ -9,12 +9,15 @@ import {
 import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from 'react';
 import useSpotify from '../hooks/useSpotify';
+import { useRecoilState } from 'recoil';
+import { playlistIdState } from '../atoms/playlistAtom';
+
 
 function Sidebar() {
     const spotifyApi = useSpotify();
     const { data: session, status } = useSession();
     const [playlists, setPlaylists] = useState([]);
-    const [playlistid, setPlaylistid] = useRecoilState(playlistidState);
+    const [playlistid, setPlaylistid] = useRecoilState(playlistIdState);
 
 
     useEffect(() => {
