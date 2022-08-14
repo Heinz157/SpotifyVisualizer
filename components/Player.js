@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
 import useSongInfo from "../hooks/useSongInfo";
-import { SwitchHorizontalIcon } from "@heroicons/react/outline";
+import { RewindIcon, SwitchHorizontalIcon, FastForwardIcon, PauseIcon, PlayIcon, ReplyIcon, VolumeUpIcon} from "@heroicons/react/solid"
+import { HeartIcon, VolumeUpIcon as VolumeDownIcon } from "@heroicons/react/outline";
 
 function Player() {
     const spotifyApi = useSpotify();
@@ -47,8 +48,15 @@ function Player() {
                     <p>{songInfo?.artists?.[0]?.name}</p>
                 </div>
             </div>
-            <div>
-                <SwitchHorizontalIcon className= "button"></SwitchHorizontalIcon>
+
+            <div className="flex items-center justify-evenly">
+                <SwitchHorizontalIcon className= "button" />
+                <RewindIcon className= "button" />
+
+                {isPlaying ? <PauseIcon className= "button w-10 h-10" /> : <PlayIcon className= "butto w-10 h-10" />}
+
+                <FastForwardIcon className= "button" />
+                <ReplyIcon className= "button" />
             </div>
         </div>
     );
