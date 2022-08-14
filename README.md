@@ -1,27 +1,17 @@
-# Next.js + Tailwind CSS Example
+# Log
+- Had lots of issues throughout this build and learned many new things.
+- Tailwind was a fun experience learning how to use it and impliment different syntax for css
+- Tried to use Node.js middleware but with limited documentation, I ended up pausing the effort to finish the front end of the build
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+# Next Steps
+- Further develop the front end of the site
+- Fix the player css issues
+- Implement the rest of the buttons
+- Fix the middleware for sign in/out
+- Finish the volume slider
 
-## Deploy your own
+# Important to Note!
+- This is not offiliated with spotify nor meant to be used in a commercial manner.
+- This is a work in progress and is not meant to be used as a final product.
+- Project was designed for educational pruposes only.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
