@@ -3,6 +3,8 @@
 - Tailwind was a fun experience learning how to use it and impliment different syntax for css
 - Tried to use Node.js middleware but with limited documentation, I ended up pausing the effort to finish the front end of the build
 
+- Had many issues with the spotify API and found some issues related to the rewind and fast forward button calls
+
 # Next Steps
 - Further develop the front end of the site
 - Fix the player css issues
