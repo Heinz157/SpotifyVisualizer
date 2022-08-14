@@ -29,6 +29,18 @@ function Player() {
         }
     };
 
+    const handlePlayPause = () => {
+        spotifyApi.getMyCurrentPlaybackState().then(data => {
+            if (data.body?.is_playing) {
+                spotifyApi.pause();
+                setIsPlaying(false);
+            } else {
+                spotifyApi.play();
+                setIsPlaying(true);
+            }
+        });
+    }
+
     useEffect(() => {
         if (spotifyApi.getAccessToken() && !currentTrackId) {
             // fetch song info
@@ -40,7 +52,7 @@ function Player() {
 
     return (
         <div className="h-24 bg-gradient-to-b from-black to-gray-900 text-white grid-cols-3 text-xs md:text-base px-2 md:px-8">
-            
+            {/* Left */}
             <div className="flex items-center space-x-4">
                 <img className="hidden md:inline h-10 w-10" src={songInfo?.album.images?.[0]?.url} alt="" />
                 <div>
@@ -48,15 +60,24 @@ function Player() {
                     <p>{songInfo?.artists?.[0]?.name}</p>
                 </div>
             </div>
-
+            {/* Center */}
             <div className="flex items-center justify-evenly">
                 <SwitchHorizontalIcon className= "button" />
-                <RewindIcon className= "button" />
+                <RewindIcon // onClick={() => spotifyApi.skipToPrevious()} -- API not working 
+                className= "button" />
 
-                {isPlaying ? <PauseIcon className= "button w-10 h-10" /> : <PlayIcon className= "butto w-10 h-10" />}
+                {isPlaying ? <PauseIcon className= "button w-10 h-10" onClick={handlePlayPause}/> : <PlayIcon className= "button w-10 h-10" onClick={handlePlayPause}/>}
 
-                <FastForwardIcon className= "button" />
+                <FastForwardIcon // onClick={() => spotifyApi.skipToNext()} --API not working
+                className= "button" />
+                
                 <ReplyIcon className= "button" />
+            </div>
+            {/* Right */}
+            <div className="flex items-center space-x-3 md:space-x-4 justify-end pr-5">
+                <VolumeDownIcon className= "button" />
+                <input className="w-14 md:w-28" type='range' value='' min={0} max={100} onChange/>
+                <VolumeUpIcon className= "button" />
             </div>
         </div>
     );
